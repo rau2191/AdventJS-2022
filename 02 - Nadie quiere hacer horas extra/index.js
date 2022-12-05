@@ -10,7 +10,7 @@ function countHours(year, holidays) {
 }
 
 function countHours2(year, holidays) {
-    return holidays.reduce((acc, date) =>  acc + (new Date(`${year}/${date}`).getDay() % 6 !== 0 ? 1 : 0) * 2, 0)
+    return holidays.reduce((acc, date) =>  acc + (new Date(`${year}/${date}`).getDay() % 6 !== 0 ? 2 : 0), 0)
 }
 
 
