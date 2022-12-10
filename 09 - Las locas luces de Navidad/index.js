@@ -1,23 +1,9 @@
 function countTime(leds) {
-    if(!leds.includes(0)) return 0;
-  
-    const turnOn = (copyLeds, index, seconds = 0) => { 
-      if(copyLeds.at(index) === 0 && copyLeds.at(index -1) === 1){
-        leds[index] = 1;
-      }
-  
-      if(leds.includes(0) && index !== leds.length){
-        return turnOn(copyLeds, ++index,  seconds)
-      }
-      else if(leds.includes(0) && index === leds.length){
-        return turnOn([...leds], 0, seconds += 7)
-      }
-     
-      return !leds.includes(0) ? seconds+= 7 : seconds;
-    }
-    
-    return turnOn([...leds], 0);;
-  }
+  return [...leds, ...leds, ...leds]
+    .join("")
+    .split(1)
+    .sort(({ length: a }, { length: b }) => b - a)[0].length * 7
+}
 
 console.log("expected:", 7, "Actual:", countTime([0, 1, 1, 0, 1]));
 // 7 segundos ya que en el primer cambio
