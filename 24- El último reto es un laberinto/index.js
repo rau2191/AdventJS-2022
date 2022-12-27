@@ -5,7 +5,7 @@ function canExit(maze) {
 
     const entranceRow = maze.findIndex(row => row.includes(ENTRANCE));
     const entranceCol = maze[entranceRow].indexOf(ENTRANCE);
-    
+
     const visitedCells = [];
     const nextMoves = [[entranceRow, entranceCol]];
     const possibleMovements = [
